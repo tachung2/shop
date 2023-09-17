@@ -1,38 +1,146 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+  text-decoration: none;
+  color: inherit
+}
+.mw {
+  max-width: 1200px;
+  width: calc(100% - 2rem);
+  margin: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  gap: 2rem;
+  border-bottom: 1px solid #eaeaea;
+  align-items: center;
+  padding: 1rem 0;
+}
+header h1 {
+  width: 25%;
+  min-width: 100px;
+  max-width: 250px;
+}
+header img {
+  width: 100%;
+}
+
+header nav, header div {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+header nav {
+  flex-grow: 1;
+}
+
+header a {
+  padding: 0.5rem 1rem;
+  transition: 0.3s;
+}
+header a:hover {
+  color: tomato;
+}
+header div {
+  position: relative;
+}
+header div::before {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 10px;
+  background-color: #999;
+  left: -0.5rem;
+  top:50%;
+  transform: translateY(-50%);
+}
+
+.banner {
+  border: 1px solid red;
+}
+
+.banner ._inner {
+  height: 400px;
+}
+.swiper-button-prev:after {
+  content: "" !important;
+  width: 20px;
+  height: 20px;
+  border-top: 5px solid tomato;
+  border-right: 5px solid tomato;
+  transform: rotate(-135deg);
+  color: tomato;
+}
+.swiper-button-next:after {
+  content: "" !important;
+  width: 20px;
+  height: 20px;
+  border-top: 5px solid tomato;
+  border-right: 5px solid tomato;
+  transform: rotate(45deg);
+  color: tomato;
+}
+
+.swiper-slide div {
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.main_list {
+  margin-top: 2rem;
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main_list .__list {
+  width: 100%;
+  margin-top: 1rem;
+  border: 1px solid blue;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.__list li {
+  border: 1px solid lightblue;
+  width: calc(100% / 3 - 1rem);
+  margin-right: 1.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.__list li:nth-of-type(3n) {
+  margin-right: 0 !important;
+}
+.p_img {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.p_img img {
+  width: 100%;
+}
+.__list span {
+  display: block;
+  line-height: 2;
+}
+
+.detail {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  color: transparent;
 }
